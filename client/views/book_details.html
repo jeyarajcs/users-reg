@@ -1,27 +1,27 @@
-<a href="#/books">Go Back</a>
+<a href="#/users">Go Back</a>
 <div class="panel panel-default" ng-init="getBook()">
   <div class="panel-heading">
-    <h3 class="panel-title">{{book.title}}</h3>
+    <h3 class="panel-title">{{book.name}}</h3>
   </div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-4">
-        <img src="{{book.image_url}}">
+        <img src="{{book.url || 'https://www.nifu.no/wp-content/uploads/2017/06/shutterstock_314952380.jpg'}}">
       </div>
       <div class="col-md-8">
-        </p>{{book.description}}</p>
+        </p>{{book.qualification}}</p>
         <ul class="list-group">
-          <li class="list-group-item">Genre: {{book.genre}}</li>
-          <li class="list-group-item">Author: {{book.author}}</li>
-          <li class="list-group-item">Publisher: {{book.publisher}}</li>
-          <li class="list-group-item">Pages: {{book.pages}}</li>
+          <li class="list-group-item">Institute: {{book.institute}}</li>
+          <li class="list-group-item">Title: {{book.title}}</li>
+          <li class="list-group-item">Phone: {{book.phone}}</li>
+          <li class="list-group-item">Email: {{book.email}}</li>
         </ul>
-        <a target="_blank" href="{{book.buy_url}}" class="btn btn-primary">Buy on Amazon</a>
+        <!-- <a target="_blank" href="{{book.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
       </div>
     </div>
   </div>
 </div>
 
 <div class="pull-right">
-  <a href="#/books/edit/{{book._id}}">Edit</a> |  <a href="#" ng-click="removeBook(book._id)">Delete</a>
+  <a href="#/users/edit/{{book._id}}">Edit</a> |  <a href="#" ng-click="removeBook(book._id)">Delete</a>
   </div>
