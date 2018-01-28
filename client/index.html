@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default icbait-navbar">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -14,17 +14,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/#/users">User Registration</a>
+          <a class="navbar-brand " href="/#/users">
+          <img class="logo pull-left" src="images/logo.png"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/users/add">Add User</a></li>
+            <li><a class="add-user" href="#/users/add">Add User</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container bodyData">
     	<div class="row">
     		<div class="col-md-12">
     			<div ng-view></div>
