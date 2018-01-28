@@ -9,12 +9,14 @@
         <img src="{{book.url || 'https://www.nifu.no/wp-content/uploads/2017/06/shutterstock_314952380.jpg'}}">
       </div>
       <div class="col-md-8">
-        </p>{{book.qualification}}</p>
+        </p>{{book.designation}}</p>
         <ul class="list-group">
-          <li class="list-group-item">Institute: {{book.institute}}</li>
+          <li class="list-group-item">Paper ID: {{book.paper_id}}</li>
           <li class="list-group-item">Title: {{book.title}}</li>
           <li class="list-group-item">Phone: {{book.phone}}</li>
           <li class="list-group-item">Email: {{book.email}}</li>
+          <li class="list-group-item">Status: {{book.status}}</li>
+
         </ul>
         <!-- <a target="_blank" href="{{book.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
       </div>
