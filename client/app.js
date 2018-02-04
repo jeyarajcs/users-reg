@@ -21,6 +21,38 @@ myApp.config(function($routeProvider){
 		controller:'BooksController',
 		templateUrl: 'views/edit_book.html'
 	})
+	.when('/plagiarisms', {
+		controller:'BooksController',
+		templateUrl: 'views/plagiarism_list.html'
+	})
+	.when('/plagiarisms/details/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/plagiarism_details.html'
+	})
+	.when('/plagiarisms/add',{
+		controller:'BooksController',
+		templateUrl: 'views/add_plagiarism.html'
+	})
+	.when('/plagiarisms/edit/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/edit_plagiarism.html'
+	})
+	.when('/reviewers', {
+		controller:'BooksController',
+		templateUrl: 'views/reviewers_list.html'
+	})
+	.when('/reviewers/details/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/reviewer_details.html'
+	})
+	.when('/reviewers/add',{
+		controller:'BooksController',
+		templateUrl: 'views/add_reviewer.html'
+	})
+	.when('/reviewers/edit/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/edit_reviewer.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});

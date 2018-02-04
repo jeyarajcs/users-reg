@@ -1,0 +1,18 @@
+<div class="panel panel-default" ng-init="getPlagiarisms()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Plagiarisms List</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+    	<div ng-repeat="plagiarism in plagiarisms">
+    		<div class="col-md-6">
+    			<div class="col-md-6">
+    				<h4>Paper ID : {{plagiarism.paper_id}}</h4>
+    				<p>Percentage : {{plagiarism.percentage}}</p>
+    				<a class="btn btn-primary" href="#/plagiarisms/details/{{plagiarism._id}}">View Details</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>

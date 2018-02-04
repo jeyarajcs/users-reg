@@ -1,0 +1,27 @@
+<a href="#/plagiarisms">Go Back</a>
+<div class="panel panel-default" ng-init="getPlagiarism()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Title / Paper ID : {{plagiarism.paper_title}} / {{plagiarism.paper_id}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        </p>Percentage : {{plagiarism.percentage}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Received Date: {{plagiarism.date_receive | date : 'mediumDate'}}</li>
+          <li class="list-group-item">Checked Date: {{plagiarism.date_checked | date : 'mediumDate'}}</li>
+          <li class="list-group-item">Author: {{plagiarism.author}}</li>
+          <li class="list-group-item">Designation: {{plagiarism.designation}}</li>
+          <li class="list-group-item">Institute: {{plagiarism.institute}}</li>
+          <li class="list-group-item">Status: {{plagiarism.status}}</li>
+
+        </ul>
+        <!-- <a target="_blank" href="{{book.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/plagiarisms/edit/{{plagiarism._id}}">Edit</a> |  <a href="#" ng-click="removePlagiarism(plagiarism._id)">Delete</a>
+  </div>

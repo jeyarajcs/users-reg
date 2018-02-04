@@ -1,0 +1,55 @@
+<a href="#/reviewers">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Reviewer</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+      <form ng-submit="updateReviewer()" ng-init="getReviewer()">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" ng-model="reviewer.name" placeholder="Reviewer Name">
+        </div>
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" class="form-control" ng-model="reviewer.reviewer_id" placeholder="Reviewer ID">
+        </div>
+        <div class="form-group">
+          <label>Designation</label>
+          <input type="text" class="form-control" ng-model="reviewer.designation" placeholder="Designation">
+        </div>
+        <div class="form-group">
+          <label>Institute</label>
+          <input type="text" class="form-control" ng-model="reviewer.institute" placeholder="Institute">
+        </div>
+        <div class="form-group">
+          <label>email</label>
+          <input type="text" class="form-control" ng-model="reviewer.email" placeholder="email">
+        </div>
+        <div class="form-group">
+          <label>Contact No</label>
+          <input type="text" class="form-control" ng-model="reviewer.phone" placeholder="Phone">
+        </div>
+        <div class="form-group">
+          <label>Paper Assigned</label>
+          <input type="text" class="form-control" ng-model="reviewer.paper_id" placeholder="Paper Assigned">
+        </div>
+        <div class="form-group">
+          <label>Received Date</label>
+          <input type="date" class="form-control" ng-model="reviewer.date_receive" placeholder="Received Date">
+        </div>
+        <div class="form-group">
+          <label>Date Sent</label>
+          <input type="date" class="form-control" ng-model="reviewer.date_sent" placeholder="Sent Date">
+        <div class="form-group">
+          <label>Report URL</label>
+          <input type="text" class="form-control" ng-model="reviewer.reporturl" placeholder="Report">
+        </div>
+       
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
