@@ -13,6 +13,12 @@ const userSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	author2:{
+		type : String
+	},
+	author3:{
+		type : String
+	},
 	title:{
 		type: String
 	},
@@ -59,6 +65,8 @@ module.exports.updateUser = (id, user, options, callback) => {
 	var update = {
 		name: user.name,
 		designation: user.designation,
+		author2 : user.author2,
+		author3 : user.author3,
 		paper_id: user.paper_id,
 		institute: user.institute,
 		title: user.title,

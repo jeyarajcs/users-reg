@@ -1,0 +1,26 @@
+<a href="#/reviewers">Go Back</a>
+<div class="panel panel-default" ng-init="getReviewer()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Reviewer Name : {{reviewer.name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        </p>{{reviewer.designation}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Phone: {{reviewer.phone}}</li>
+          <li class="list-group-item">Email: {{reviewer.email}}</li>
+          <li class="list-group-item">Paper Assigned: {{reviewer.paper_id}}</li>
+          <li class="list-group-item">Date Received: {{reviewer.date_receive | date : 'mediumDate'}}</li>
+          <li class="list-group-item">Date Sent: {{reviewer.date_sent | date : 'mediumDate'}}</li>
+
+        </ul>
+        <!-- <a target="_blank" href="{{reviewer.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/reviewers/edit/{{reviewer._id}}">Edit</a> |  <a href="#" ng-click="removeReviewer(reviewer._id)">Delete</a>
+  </div>
