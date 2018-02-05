@@ -10,9 +10,10 @@ app.use(bodyParser.json());
 User = require('./models/User');
 Plagiarism = require('./models/Plagiarism');
 Reviewer = require('./models/Reviewer');
+Registration = require('./models/Registration');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://devibala:devibala123@ds217138.mlab.com:17138/cs_conference');
+mongoose.connect('mongodb://devibala_db:devibala_db@ds217138.mlab.com:17138/cs_conference');
 var db = mongoose.connection;
 
 app.get('/', (req, res) => {
@@ -165,6 +166,56 @@ app.delete('/api/reviewers/:_id', (req, res) => {
 		res.json(user);
 	});
 });
+
+app.get('/api/registrations', (req, res) => {
+	Registration.getRegistrations((err, books) => {
+		if(err){
+			throw err;
+		}
+		res.json(books);
+	});
+});
+
+app.get('/api/registrations/:_id', (req, res) => {
+	Registration.getRegistrationById(req.params._id, (err, book) => {
+		if(err){
+			throw err;
+		}
+		res.json(book);
+	});
+});
+
+app.post('/api/new-registration', (req, res) => {
+	var user = req.body;
+	Registration.addRegistration(user, (err, result) => {
+		if(err){
+			throw err;
+		}
+		res.json(result);
+	});
+});
+
+app.put('/api/registrations/:_id', (req, res) => {
+	var id = req.params._id;
+	var user = req.body;
+	Registration.updateRegistration(id, user, {}, (err, result) => {
+		if(err){
+			throw err;
+		}
+		res.json(result);
+	});
+});
+
+app.delete('/api/registrations/:_id', (req, res) => {
+	var id = req.params._id;
+	Registration.removeRegistration(id, (err, user) => {
+		if(err){
+			throw err;
+		}
+		res.json(user);
+	});
+});
+
 
 app.listen(3000);
 console.log('Running on port 3000...');
