@@ -1,0 +1,26 @@
+<a href="#/reviewers">Go Back</a>
+<div class="panel panel-default" ng-init="getRegistration()">
+  <div class="panel-heading">
+    <h3 class="panel-title"> Name : {{registration.name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-8">
+        </p>{{registration.designation}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Paper ID: {{registration.paper_id}}</li>
+          <li class="list-group-item">Title: {{registration.title}}</li>
+          <li class="list-group-item">Category: {{registration.category}}</li>
+          <li class="list-group-item">Tutorial Enrolled: {{registration.tutorial_enrolled}}</li>
+          <li class="list-group-item">Payment Mode: {{registration.payment_mode}}</li>
+           <li class="list-group-item">Bank: {{registration.bank}}</li>
+        </ul>
+        <!-- <a target="_blank" href="{{reviewer.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/registrations/edit/{{registration._id}}">Edit</a> |  <a href="#" ng-click="removeRegistration(registration._id)">Delete</a>
+  </div>

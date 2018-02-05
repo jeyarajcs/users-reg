@@ -104,4 +104,36 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
 			window.location.href='#/reviewers';
 		});
 	}
+
+	$scope.getRegistrations = function(){
+		$http.get('/api/registrations').success(function(response){
+			$scope.registrations = response;
+		});
+	}
+
+	$scope.getRegistration = function(){
+		var id = $routeParams.id;
+		$http.get('/api/registrations/'+id).success(function(response){
+			$scope.registration = response;
+		});
+	}
+
+	$scope.addRegistration = function(){
+		$http.post('/api/new-registration/', $scope.registration).success(function(response){
+			window.location.href='#/registrations';
+		});
+	}
+
+	$scope.updateRegistration = function(){
+		var id = $routeParams.id;
+		$http.put('/api/registrations/'+id, $scope.registration).success(function(response){
+			window.location.href='#/registrations';
+		});
+	}
+
+	$scope.removeRegistration = function(id){
+		$http.delete('/api/registrations/'+id).success(function(response){
+			window.location.href='#/registrations';
+		});
+	}
 }]);

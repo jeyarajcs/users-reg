@@ -53,6 +53,22 @@ myApp.config(function($routeProvider){
 		controller:'BooksController',
 		templateUrl: 'views/edit_reviewer.html'
 	})
+	.when('/registrations', {
+		controller:'BooksController',
+		templateUrl: 'views/registration_list.html'
+	})
+	.when('/registrations/details/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/registration_details.html'
+	})
+	.when('/registrations/add',{
+		controller:'BooksController',
+		templateUrl: 'views/add_registration.html'
+	})
+	.when('/registrations/edit/:id',{
+		controller:'BooksController',
+		templateUrl: 'views/edit_registration.html'
+	})
 	.otherwise({
 		redirectTo: '/'
 	});
