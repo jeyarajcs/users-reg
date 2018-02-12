@@ -52,7 +52,7 @@ module.exports.getPlagiarismById = (id, callback) => {
 					"foreignField" : "paper_id",
 					"as" : "paper_details"
 				}
-			},
+			}/*,
 			{
 				$match : {"paper_details.0":{$exists:true}}
 			},
@@ -72,7 +72,7 @@ module.exports.getPlagiarismById = (id, callback) => {
 					institute : "$paper_details.institute",
 					status : "$paper_details.status"
 				}
-			}
+			}*/
 			
 		], callback)
 }

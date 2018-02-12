@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-4">
         </p>Percentage : {{plagiarism.percentage}}</p>
         <ul class="list-group">
           <li class="list-group-item">Received Date: {{plagiarism.date_receive | date : 'mediumDate'}}</li>
@@ -18,10 +18,13 @@
         </ul>
         <!-- <a target="_blank" href="{{book.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
       </div>
+      <div class="col-md-8">
+        <iframe ng-src="{{plagiarism.reporturl | trustAsResourceUrl}}" width="580px" height="480px"></iframe>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="pull-right">
-  <a href="#/plagiarisms/edit/{{plagiarism._id}}">Edit</a> |  <a href="#" ng-click="removePlagiarism(plagiarism._id)">Delete</a>
+  <a ng-click="gotoEditPlagiarism()">Edit</a> |  <a href="#" ng-click="removePlagiarism(plagiarism._id)">Delete</a>
   </div>

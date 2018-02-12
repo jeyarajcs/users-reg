@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-4">
         </p>{{reviewer.designation}}</p>
         <ul class="list-group">
           <li class="list-group-item">Phone: {{reviewer.phone}}</li>
@@ -16,6 +16,9 @@
 
         </ul>
         <!-- <a target="_blank" href="{{reviewer.buy_url}}" class="btn btn-primary">Buy on Amazon</a> -->
+      </div>
+      <div class="col-md-8">
+        <iframe ng-src="{{reviewer.reporturl | trustAsResourceUrl}}" width="580px" height="480px"></iframe>
       </div>
     </div>
   </div>

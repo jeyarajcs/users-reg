@@ -49,6 +49,14 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
 			$scope.plagiarism = response[0];
 			$scope.plagiarism.date_receive = response.date_receive != null ? new Date(response.date_receive) : new Date();
 			$scope.plagiarism.date_checked = response.date_checked != null ? new Date(response.date_checked) : new Date();
+
+			if($scope.plagiarism.paper_details.length>0){
+				$scope.plagiarism.paper_title = $scope.plagiarism.paper_details[0].title;
+				$scope.plagiarism.author = $scope.plagiarism.paper_details[0].name;
+				$scope.plagiarism.designation = $scope.plagiarism.paper_details[0].designation;
+				$scope.plagiarism.institute = $scope.plagiarism.paper_details[0].institute;
+				$scope.plagiarism.status = $scope.plagiarism.paper_details[0].status;
+			}
 		});
 	}
 
@@ -136,4 +144,22 @@ myApp.controller('BooksController', ['$scope', '$http', '$location', '$routePara
 			window.location.href='#/registrations';
 		});
 	}
+
+	$scope.getURL = function(driveId){
+
+		var drive_id = "https://docs.google.com/viewer?srcid="+driveId+"&pid=explorer&efh=false&a=v&chrome=false&embedded=true";
+		return drive_id;
+	}
+
+	$scope.gotoEditPlagiarism = function(){
+		//#/plagiarisms/edit/{{plagiarism._id}}
+		$location.path("/plagiarisms/edit/"+$routeParams.id)
+	}
+	
 }]);
+
+myApp.filter('trustAsResourceUrl', ['$sce', function ($sce) {
+    return function(driveId) {
+      return $sce.trustAsResourceUrl("https://docs.google.com/viewer?srcid="+driveId+"&pid=explorer&efh=false&a=v&chrome=false&embedded=true");
+    };
+	 }]);
